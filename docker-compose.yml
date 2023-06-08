@@ -1,0 +1,17 @@
+# WARNING: this file is not suitable for production, please use with caution
+version: '3'
+
+services:
+  web:
+    image: orsa_deployer_api
+    build: .
+    command: gunicorn -b 0.0.0.0:5000 orsa_deployer_api.wsgi:app
+    env_file:
+      - ./.flaskenv
+    environment:
+      - DATABASE_URI=sqlite:////db/orsa_deployer_api.db
+    volumes:
+      - ./orsa_deployer_api:/code/orsa_deployer_api
+      - ./db/:/db/
+    ports:
+      - "5000:5000"

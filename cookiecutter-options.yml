@@ -1,0 +1,9 @@
+default_context:
+    project_name: "orsa-deployer"
+    app_name: "orsa_deployer_api"
+    python_version: "3.8"
+    admin_user_username: "admin"
+    admin_user_email: "orsa.cloud@gmail.com"
+    admin_user_password: "my_password"
+    use_celery: "no"
+    wsgi_server: "gunicorn"
